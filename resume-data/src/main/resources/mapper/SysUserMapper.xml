@@ -14,7 +14,43 @@
         created_at createdAt,
         updated_at updatedAt
     </sql>
+
+    <sql id="insert_data">
+        user_name,
+        pass_word,
+        real_name,
+        address,
+        phone,
+        email,
+        created_at
+    </sql>
     <select id="findAll" resultType="com.resume.entity.SysUserEntity">
         select <include refid="result_data"></include> from sys_user;
     </select>
+
+    <select id="findUserByName" resultType="com.resume.entity.SysUserEntity">
+        select <include refid="result_data"></include> from sys_user where user_name like #{userName};
+    </select>
+
+    <insert id="saveUser" parameterType="com.resume.entity.SysUserEntity">
+        insert into sys_user (<include refid="insert_data"></include>) value(#{userName},#{passWord},#{realName},#{address},#{phone},#{email},#{createdAt})
+    </insert>
+
+    <update id="updateUser" parameterType="com.resume.entity.SysUserEntity">
+        update sys_user set user_name=#{userName},pass_word=#{passWord},real_name=#{realName},address=#{address}，phone=#{phone}，email=#{email}，updated_at=#{updatedAt}
+        where id=#{id}
+    </update>
+
+    <update id="updatePassWord">
+        update sys_user set pass_word=#{passWord} where id=#{id}
+    </update>
+
+    <update id="updateLastLoginTime">
+        update sys_user set last_login_time=#{lastLoginTime} where id=#{id}
+    </update>
+
+    <delete id="deleteUserById">
+        delete from sys_user where id=#{id}
+    </delete>
+
 </mapper>

@@ -1,8 +1,10 @@
 package com.resume.service;
 
 import com.resume.entity.SysUserEntity;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -14,6 +16,18 @@ import java.util.List;
  **/
 public interface SysUserService {
 
-    List<SysUserEntity> findAllqq();
+    List<SysUserEntity> findAll();
+
+    List<SysUserEntity> findUserByName(String userName);
+
+    void saveUser(SysUserEntity sysUserEntity);
+
+    void updateUser(SysUserEntity sysUserEntity);
+
+    void updatePassWord(String id, String passWord);
+
+    void updateLastLoginTime(String id,  Date lastLoginTime);
+
+    void deleteUserById(String id);
 
 }
