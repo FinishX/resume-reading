@@ -21,6 +21,8 @@ public interface SysUserMapper {
 
     List<SysUserEntity> findUserByName(@Param("userName") String userName);
 
+    SysUserEntity findUserById(@Param("id") String id);
+
     void saveUser(SysUserEntity sysUserEntity);
 
     void updateUser(SysUserEntity sysUserEntity);

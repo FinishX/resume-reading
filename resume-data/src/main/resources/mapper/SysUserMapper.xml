@@ -32,6 +32,10 @@
         select <include refid="result_data"></include> from sys_user where user_name like #{userName};
     </select>
 
+    <select id="findUserById" resultType="java.lang.String">
+        select <include refid="result_data"></include> from sys_user where id =#{id};
+    </select>
+
     <insert id="saveUser" parameterType="com.resume.entity.SysUserEntity">
         insert into sys_user (<include refid="insert_data"></include>) value(#{userName},#{passWord},#{realName},#{address},#{phone},#{email},#{createdAt})
     </insert>

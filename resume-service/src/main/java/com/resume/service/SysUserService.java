@@ -20,6 +20,8 @@ public interface SysUserService {
 
     List<SysUserEntity> findUserByName(String userName);
 
+    SysUserEntity findUserById(String id);
+
     void saveUser(SysUserEntity sysUserEntity);
 
     void updateUser(SysUserEntity sysUserEntity);

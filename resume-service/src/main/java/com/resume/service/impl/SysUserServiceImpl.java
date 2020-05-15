@@ -35,6 +35,11 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     @Override
+    public SysUserEntity findUserById(String id) {
+        return sysUserMapper.findUserById(id);
+    }
+
+    @Override
     public void saveUser(SysUserEntity sysUserEntity) {
         sysUserMapper.saveUser(sysUserEntity);
     }
