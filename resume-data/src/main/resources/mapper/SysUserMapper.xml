@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.resume.mapper.SysUserMapper">
+    <sql id="result_data">
+        id id,
+        user_name userName,
+        pass_word passWord,
+        real_name realName,
+        address address,
+        phone phone,
+        email email,
+        last_login_time lastLoginTime,
+        created_at createdAt,
+        updated_at updatedAt
+    </sql>
+    <select id="findAll" resultType="com.resume.entity.SysUserEntity">
+        select <include refid="result_data"></include> from sys_user;
+    </select>
+</mapper>
