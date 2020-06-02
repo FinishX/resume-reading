@@ -32,6 +32,10 @@
         select <include refid="result_data"></include> from sys_user where user_name like #{userName};
     </select>
 
+    <select id="findUser" resultType="com.resume.entity.SysUserEntity">
+        select <include refid="result_data"></include> from sys_user where user_name = #{userName} and pass_word= #{passWord};
+    </select>
+
     <select id="findUserById" resultType="java.lang.String">
         select <include refid="result_data"></include> from sys_user where id =#{id};
     </select>

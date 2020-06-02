@@ -1,4 +1,4 @@
-package com.resume.manager.controller;
+package com.resume.manager.controller.system;
 
 
 import cn.hutool.crypto.SecureUtil;
@@ -6,11 +6,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.resume.common.util.ResultData;
 import com.resume.entity.SysUserEntity;
 import com.resume.mapper.SysUserMapper;
-import com.resume.service.SysUserService;
+import com.resume.service.system.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Security;
 import java.util.Date;
 import java.util.List;
 

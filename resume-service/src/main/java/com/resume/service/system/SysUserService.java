@@ -1,4 +1,4 @@
-package com.resume.service;
+package com.resume.service.system;
 
 import com.resume.entity.SysUserEntity;
 import org.apache.ibatis.annotations.Param;
@@ -19,6 +19,8 @@ public interface SysUserService {
     List<SysUserEntity> findAll();
 
     List<SysUserEntity> findUserByName(String userName);
+
+    List<SysUserEntity> findUser(String userName,String passWord);
 
     SysUserEntity findUserById(String id);
 

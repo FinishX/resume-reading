@@ -1,8 +1,8 @@
-package com.resume.service.impl;
+package com.resume.service.system.impl;
 
 import com.resume.entity.SysUserEntity;
 import com.resume.mapper.SysUserMapper;
-import com.resume.service.SysUserService;
+import com.resume.service.system.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -32,6 +32,11 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public List<SysUserEntity> findUserByName(String userName) {
         return sysUserMapper.findUserByName(userName);
+    }
+
+    @Override
+    public List<SysUserEntity> findUser(String userName, String passWord) {
+        return sysUserMapper.findUser(userName,passWord);
     }
 
     @Override

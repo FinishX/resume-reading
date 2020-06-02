@@ -9,47 +9,47 @@ package com.resume.common.util;
  **/
 public class ResultData {
 
-    private String code;
-    private String msg;
+    private Integer code;
+    private Object data;
 
-    public static String SUCCESS_CODE="200";
-    public static String ERROR_CODE="500";
-    public static String WARING_CODE="403";
+    public static Integer SUCCESS_CODE= 200;
+    public static Integer ERROR_CODE= 500;
+    public static Integer WARING_CODE= 403;
 
-    public static ResultData successData(String msg){
+    public static ResultData successData(Object data){
         ResultData resultData = new ResultData();
-        resultData.msg=msg;
+        resultData.data=data;
         resultData.code=SUCCESS_CODE;
         return resultData;
     }
 
-    public static ResultData waringData(String msg){
+    public static ResultData waringData(Object data){
         ResultData resultData = new ResultData();
-        resultData.msg=msg;
+        resultData.data=data;
         resultData.code=WARING_CODE;
         return resultData;
     }
 
-    public static ResultData errorData(String msg){
+    public static ResultData errorData(String data){
         ResultData resultData = new ResultData();
-        resultData.msg=msg;
+        resultData.data=data;
         resultData.code=ERROR_CODE;
         return resultData;
     }
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 
-    public String getMsg() {
-        return msg;
+    public Object getData() {
+        return data;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setData(Object data) {
+        this.data = data;
     }
 }
